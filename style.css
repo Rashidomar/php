@@ -1,0 +1,76 @@
+#signin{
+    margin: 0 auto;
+    border: 1px solid cornflowerblue;
+    height: 350px;
+    width: 400px;
+    border-radius: 3px;
+}
+
+#signin-header h4, #signup-header h4{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin:auto;
+}
+
+#signin-header, #signup-header{
+    background-color: cornflowerblue;
+    font-size: 1.2em;
+    text-align: center;
+    height: 60px;
+}
+
+#signin-body, #signup-body{
+    text-align: center;
+}
+
+span{
+  font-size: 1.2em;
+}
+
+input{
+    height: 30px;
+    width: 300px;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.0em;
+    padding-left: 5px;
+    border-style:solid;
+    border-color: cornflowerblue;
+    border: 1px solid cornflowerblue;
+}
+
+#login{
+    height: 30px;
+    width: 100px;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.0em;
+    padding-left: 5px; 
+    font-size: 1.2em;
+    background-color:cornflowerblue;
+    border-style: hidden;  
+}
+
+#signup a{
+    text-decoration: none;
+    font-size: 1.5em;
+    color: black; 
+}
+
+#signup{
+    background-color: cornflowerblue;
+    border-style: hidden;
+    height: 30px;  
+}
+
+#signup-container{
+    border: 1px solid cornflowerblue;
+    width: 400px;
+    border-radius: 3px;
+    margin: 100px auto;
+    
+}
+
+
