@@ -39,32 +39,3 @@
 
     }
  ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Styling</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-       <form id="signin" method="POST" action="">
-        <div id="signin-header">
-            <h4>SIGN IN</h4>
-        </div>
-        <div id="signin-body">
-            <span>Username</span>
-            <br>
-            <input type="username" name="username"  class="" placeholder="username">
-            <br>
-            <span>Password</span>
-            <br>
-            <input type="password" name="password" class="" placeholder="password">
-            <input type="submit" value="logIn" id="login">
-            <br>
-            <button id="signup"><a href="register.php">click to sign up</a></button>
-            
-            
-        </div>
-  
-       </form>
-    </body>
-</html>

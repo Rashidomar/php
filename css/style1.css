@@ -1,0 +1,73 @@
+body{
+	padding: 0;
+	margin: 0;
+	font:Verdana;
+
+}
+
+#main_container{
+	margin: 10px auto;
+	width: 1000px;
+	height: 630px;
+	border: 1px solid cornflowerblue;
+	background: #ccc;
+	overflow: hidden;
+	border-radius: 3px;
+
+}
+
+#user_detail{
+	width: auto;
+	height: 40px;
+	background: cornflowerblue;
+	color: white;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	font-size: 1.2em;
+}
+
+#chat_body{
+	width: auto;
+	height: 300px;
+	overflow-y: scroll;
+	background: white;
+	
+}
+
+#form_container{
+	padding: 20px;
+	padding-left: 20px;
+	height: 250px;
+	background:#CCC;
+
+}
+
+#name{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: 30px;
+	width: 400px;
+	border:1px solid cornflowerblue;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+#message{
+	height: 100px;
+	width:400px;
+	border-radius: 5px;
+	font-size: 1.2em;
+
+}
+
+#send{
+	height: 40px;
+	width: 70px;
+	border-radius: 2px;
+	border: 2px hidden;
+	cursor: progress;
+	background: cornflowerblue;
+	font-size: 1.2em;
+
+}

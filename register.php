@@ -1,67 +1,78 @@
  <?php
-	require 'reg.con.php';
+	//start session
+	session_start();
+
+	//connecting to the database
+	require 'connect.php';
+
+	//geting user value
+ 
+
+	if (  isset($_POST['firstname']) 
+		&& isset($_POST['lastname']) 
+		&& isset($_POST['username'])
+		&& isset($_POST['email']) 
+		&& isset($_POST['password'])
+		&& isset($_POST['passwordconfirm'])
+
+	   ) {	
+	   		//if(isset($_POST['email'])) { 
+   				//	echo htmlentities($_POST['email']);  // always filter outputs of external data
+				//}
+
+		   	//storing user values
+
+			$firstname =$_POST['firstname'];
+			$lastname = $_POST['lastname'];
+			$username = $_POST['username'];
+			$email = $_POST['email'];
+			$pass_one = $_POST['password'];
+			$pass_two = $_POST['passwordconfirm'];
+			$hash_pass = md5($pass_one);
+
+
+				//checking to make sure username fills all the fields
+				if (!empty($firstname) && !empty($lastname) && !empty($username) && !empty($email) && !empty($pass_one) && !empty($pass_two) )
+					{	
+
+						$query_one = "SELECT username FROM users where username = '$username'";
+
+						$result_one = mysqli_query($connection, $query_one);
+
+						$num_row = mysqli_num_rows($result_one);
+
+
+						//checking if username already exists
+						if($num_row == 1 ){
+							echo "username already exist";
+
+							//query to register username 
+						}else{
+
+							$query_two = "INSERT INTO users VALUES ('','$firstname','$lastname','$username','$email','$hash_pass') ";
+							$result_two = mysqli_query($connection, $query_two);
+
+							//if registration is successful create a session the user
+							if ($result_two) {
+
+								$_SESSION['username'] = $username;
+
+								//directing user to the homepage
+								header('Location: homepage.php');
+
+							}else{
+
+								echo "Unsuccessful Registration";
+							}
+						}
+
+					
+					}
+					//else{
+						//echo "Please Enter"; 
+					//}
+		
+	  	}
+
 
  ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Register</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<script type="text/javascript" src="java/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript" src="java/vlid.js"></script>
-</head>
-<body>
-	<?php
-
-	?>
-	<form id="signup-container"  method="POST" action="">
-		<div id="signup-header">
-			<h4>SIGN UP</h4>
-		</div>
-		<div id="signup-body">
-			<span id="head"></span>
-			<br>
-			First Name
-			<br>
-			<span id="first"></span>
-			<input type="text" name="firstname" placeholder="first name" id="firstname" 
-				   value="<?php if(isset($_POST['firstname'])) { echo $_POST['firstname'];} ?>">
-			<br>
-			Last Name
-			<br>
-			<span id="last"></span>
-			<input type="text" name="lastname" placeholder="last name" id="lastname"
-				   value="<?php if(isset($_POST['lastname'])) { echo $_POST['lastname'];} ?>" >
-			<br>
-			Username
-			<br>
-			<span id="user"></span>
-			<br>
-			<input type="text" name="username" placeholder="username" id="username" value="<?php  ?>">
-			<br>
-			Email
-			<br>
-			<span id="mail"></span>
-			<br>
-			<input type="text" name="email" placeholder="email" id="email"
-				   value="<?php if(isset($_POST['email'])) { echo $_POST['email'];} ?>" >
-			<br>
-			Passcode
-			<br>
-			<span id="pass_1"></span>
-			<br>
-			<input type="password" name="password" placeholder="password" id="password">
-			<br>
-			Comfirm Passcode
-			<br>
-			<span id="pass_2"></span>
-			<br>
-			<input type="password" name="passwordconfirm" placeholder="Confirm password" id="confirm_password">
-			<br>
-			<input type="submit" name="" value="Register" id="submit">
-		</div>
-	</form>
-
-
-</body>
-</html>
