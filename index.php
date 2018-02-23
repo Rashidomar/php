@@ -2,7 +2,6 @@
 <html>
     <head>
         <title>login Page</title>
-        <link rel="stylesheet" type="text/css" href="css/styl.css">
         <link rel="stylesheet" type="text/css" href="css/style2.css">
     </head>
     <body>
